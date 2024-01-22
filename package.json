@@ -1,0 +1,14 @@
+{
+  "name": "rescript-perf",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {},
+  "dependencies": {
+    "@rescript/core": "^0.6.0",
+    "benchmark": "^2.1.4",
+    "rescript": "^11.0.1"
+  }
+}
