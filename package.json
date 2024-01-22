@@ -6,7 +6,8 @@
     "bun-types": "latest"
   },
   "scripts": {
-    "dev": "rescript -w"
+    "dev": "rescript -w",
+    "start": "bun rescript build && bun index.mjs"
   },
   "peerDependencies": {},
   "dependencies": {
