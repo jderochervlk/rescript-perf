@@ -5,10 +5,17 @@
   "devDependencies": {
     "bun-types": "latest"
   },
+  "scripts": {
+    "dev": "rescript -w"
+  },
   "peerDependencies": {},
   "dependencies": {
     "@rescript/core": "^0.6.0",
     "benchmark": "^2.1.4",
+    "deep-equal": "^2.2.3",
+    "fast-deep-equal": "^3.1.3",
+    "immutable": "^5.0.0-beta.4",
+    "lodash-es": "^4.17.21",
     "rescript": "^11.0.1"
   }
 }

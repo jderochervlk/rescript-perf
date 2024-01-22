@@ -1,17 +1,28 @@
 import Benchmark from 'benchmark'
 
-import { fn } from ""
+import { compareLargeObjects } from "./src/rescript.res.mjs"
+import { lodashCompareLargeObjects } from "./src/lodash.mjs"
+import { deCompareLargeObjects } from './src/deep-equal.mjs'
+import { imCompareLargeObjects } from './src/immutable.mjs';
+import { fdeCompareLargeObjects } from './src/fast-deep-equal.mjs';
+
 var suite = new Benchmark.Suite;
 
 // add tests
-suite.add('RegExp#test', function () {
-  /o/.test('Hello World!');
+suite.add('ReScript#caml_obj', function () {
+  compareLargeObjects()
 })
-  .add('String#indexOf', function () {
-    'Hello World!'.indexOf('o') > -1;
+  .add('lodash#isEqual', function () {
+    lodashCompareLargeObjects()
   })
-  .add('String#match', function () {
-    !!'Hello World!'.match(/o/);
+  .add('deep-equal#deep-equal', function () {
+    deCompareLargeObjects()
+  })
+  .add('immutable#equals', function () {
+    imCompareLargeObjects()
+  })
+  .add('fast-deep-equal#deep-equal', function () {
+    fdeCompareLargeObjects()
   })
   // add listeners
   .on('cycle', function (event) {

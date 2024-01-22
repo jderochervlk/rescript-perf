@@ -1,6 +1,9 @@
-let a = {"foo": "bar"}
-let b = {"foo": "bar"}
+@module("./data.mjs")
+external one: {..} = "one"
 
-let fn = () => {
-  a == b
+@module("./data.mjs")
+external two: {..} = "two"
+
+let compareLargeObjects = () => {
+  let _ = one == two
 }
