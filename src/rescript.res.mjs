@@ -8,7 +8,17 @@ var one = DataMjs.one;
 var two = DataMjs.two;
 
 function compareLargeObjects() {
-  Caml_obj.equal(one, two);
+  if (Caml_obj.equal(one, two) === true) {
+    console.error("Values match when they should not");
+  }
+  if (Caml_obj.equal(one, one) === false) {
+    console.error("one Values did not match when they should");
+  }
+  if (Caml_obj.equal(Object.assign({}, one), Object.assign({}, one)) === false) {
+    console.error("two Values did not match when they should");
+    return ;
+  }
+  
 }
 
 export {

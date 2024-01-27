@@ -6,7 +6,7 @@ import { deCompareLargeObjects } from './src/deep-equal.mjs'
 import { imCompareLargeObjects } from './src/immutable.mjs';
 import { fdeCompareLargeObjects } from './src/fast-deep-equal.mjs';
 
-var suite = new Benchmark.Suite;
+var suite = new Benchmark.Suite
 
 // add tests
 suite.add('ReScript#caml_obj', function () {
@@ -32,4 +32,4 @@ suite.add('ReScript#caml_obj', function () {
     console.log('Fastest is ' + this.filter('fastest').map('name'));
   })
   // run async
-  .run({ 'async': true });
+  .run({ 'async': true, minSamples: 300 });
