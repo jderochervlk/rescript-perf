@@ -32,4 +32,4 @@ suite.add('ReScript#caml_obj', function () {
     console.log('Fastest is ' + this.filter('fastest').map('name'));
   })
   // run async
-  .run({ 'async': true, minSamples: 300 });
+  .run({ 'async': true });
