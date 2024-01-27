@@ -13,11 +13,21 @@ bun start
 ```
 
 ## results
+### Large objects
 ```
-ReScript#caml_obj x 38,493,962 ops/sec ±10.43% (49 runs sampled)
-lodash#isEqual x 10,810,920 ops/sec ±7.78% (57 runs sampled)
-deep-equal#deep-equal x 21,620 ops/sec ±5.31% (76 runs sampled)
-immutable#equals x 1,296 ops/sec ±7.05% (76 runs sampled)
-fast-deep-equal#deep-equal x 47,004,261 ops/sec ±17.49% (40 runs sampled)
+ReScript#caml_obj x 74,128 ops/sec ±3.56% (89 runs sampled)
+lodash#isEqual x 85,058 ops/sec ±5.28% (80 runs sampled)
+deep-equal#deep-equal x 8,725 ops/sec ±4.42% (84 runs sampled)
+immutable#equals x 665 ops/sec ±6.22% (77 runs sampled)
+fast-deep-equal#deep-equal x 90,871 ops/sec ±5.19% (80 runs sampled)
 Fastest is fast-deep-equal#deep-equal
+```
+### Small objects
+```
+ReScript#caml_obj x 1,688,417 ops/sec ±61.01% (63 runs sampled)
+lodash#isEqual x 792,134 ops/sec ±8.46% (71 runs sampled)
+deep-equal#deep-equal x 10,203 ops/sec ±4.64% (80 runs sampled)
+immutable#equals x 406,771 ops/sec ±8.89% (67 runs sampled)
+fast-deep-equal#deep-equal x 2,570,114 ops/sec ±5.96% (69 runs sampled)
+Fastest is fast-deep-equal#deep-equal,ReScript#caml_obj
 ```
